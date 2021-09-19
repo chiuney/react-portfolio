@@ -1,18 +1,14 @@
-import { BrowserRouter, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Router } from '../../router/Router';
 
 export const Header = (props) => {
-  // const {children} = props;
   return (
     <>
       <SHeader>
         <SLink to="/">HOME</SLink><br />
         <SLink to="/about">ABOUT</SLink><br />
         <SLink to="/carrer">CARRER</SLink>
-        {/* <Router></Router> */}
       </SHeader>
-      {/* {children} */}
     </>
   );
 }

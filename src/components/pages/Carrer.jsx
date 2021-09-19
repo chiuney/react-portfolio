@@ -1,3 +1,4 @@
+import styled from "styled-components";
 import { CarrerCard } from "../organisms/carrer/CarrerCard";
 
 const step = [{
@@ -5,7 +6,7 @@ const step = [{
   span: {start:'2021/3', end:'現在'},
   contents: [{
     title:'エンジニア',
-    content:'HTML, CSS, JavaScript, jQuery, PHP<br />AIチャットボットtalkappi => 改修<br />talkappi SURVEY(アンケートシステム) => 新規開発<br />talkappi INQUIRY(問い合わせシステム) => 新規開発中',
+    content:`HTML, CSS, JavaScript, jQuery, PHP\nAIチャットボットtalkappi => 改修<br>talkappi SURVEY(アンケートシステム) => 新規開発<br>talkappi INQUIRY(問い合わせシステム) => 新規開発中`,
   },
   {
     title:'カスタマーサクセス',
@@ -47,7 +48,23 @@ export const Carrer = () => {
   return (
     <>
       <h1>Carrer</h1>
-      <CarrerCard step={step}></CarrerCard>
+      <SContainer>
+        <CarrerCard step={step}></CarrerCard>
+      </SContainer>
     </>
   );
 }
+
+const SContainer = styled.div`
+  position: relative;
+  ::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 100%;
+    background: #11999e;
+    position: absolute;
+    /* top: -2px; */
+    left: 20px;
+  }
+`
