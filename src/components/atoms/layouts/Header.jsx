@@ -1,23 +1,36 @@
 import { BrowserRouter, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Router } from '../../router/router';
+import { Router } from '../../router/Router';
 
-export const Header = () => {
+export const Header = (props) => {
+  // const {children} = props;
   return (
     <>
-      <SHeader>HEADER</SHeader>
-      <BrowserRouter>
-        <Link to="/">HOME</Link><br />
-        <Link to="/about">ABOUT</Link><br />
-        <Link to="/carrer">CARRER</Link>
-        {/* <Router /> */}
-      </BrowserRouter>
+      <SHeader>
+        <SLink to="/">HOME</SLink><br />
+        <SLink to="/about">ABOUT</SLink><br />
+        <SLink to="/carrer">CARRER</SLink>
+        {/* <Router></Router> */}
+      </SHeader>
+      {/* {children} */}
     </>
   );
 }
 
-const SHeader = styled.div`
-  height: 30px;
+const SHeader = styled.header`
+  height: 60px;
   width: 100%;
-  background: red;
+  background: #11999e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
+const SLink = styled(Link)`
+  color: #fff;
+  margin: 8px;
+  text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
 `
