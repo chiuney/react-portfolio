@@ -68,7 +68,6 @@ export const Home = () => {
   );
 }
 
-
 const SContainer = styled.div`
   text-align: center;
   margin: 0 0 60px 0;

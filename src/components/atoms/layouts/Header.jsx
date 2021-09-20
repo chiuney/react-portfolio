@@ -8,6 +8,7 @@ export const Header = (props) => {
         <SLink to="/">Profile</SLink><br />
         {/* <SLink to="/about">ABOUT</SLink><br /> */}
         <SLink to="/carrer">History</SLink>
+        <SLink to="/personality">Personality</SLink>
       </SHeader>
     </>
   );
