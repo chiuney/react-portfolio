@@ -16,10 +16,11 @@ export const Fotter = (props) => {
 const SFotter = styled.footer`
   height: 60px;
   width: 100%;
-  background: #11999e;
+  background: #201c09;
   display: flex;
   align-items: center;
   justify-content: center;
   position: fixed;
   bottom: 0;
+  color: #fff;
 `

@@ -1,96 +1,75 @@
 import styled from 'styled-components';
-import { SkilCards } from '../organisms/skill/SkillCards';
-
-const skills = [
-  {
-    title: 'HTML5',
-    span: '1年[半年]',
-    comment: '',
-  },
-  {
-    title: 'CSS',
-    span: '1年[半年]',
-    comment: '',
-  },
-  {
-    title: 'SCSS',
-    span: '1年[半年]',
-    comment: '',
-  },
-  {
-    title: 'Ruby',
-    span: '半年 [ / ]',
-    comment: '',
-  },
-  {
-    title: 'Ruby on Rails',
-    span: '半年 [ / ]',
-    comment: 'Railsチュートリアルと自作アプリの作成',
-  },
-  {
-    title: 'JavaScript',
-    span: '1年[半年]',
-    comment: '',
-  },
-  {
-    title: 'jQuery',
-    span: '半年 [半年]',
-    comment: '',
-  },
-  {
-    title: 'React.js',
-    span: '数ヶ月 [ / ]',
-    comment: '現在メインで学習中。このサイトはReact.jsのアウトプットとして作成しています。',
-  },
-  {
-    title: 'Next.js',
-    span: '数ヶ月 [ / ]',
-    comment: 'チュートリアルと初歩的なアプリの開発',
-  },
-]
+import backgroundPc from './img/background-pc.jpg'
+import backgroundDesk from './img/background-desk.jpg'
 
 export const Home = () => {
   return (
     <>
     <SContainer>
-      <SH1>Chiuney's Portfolio</SH1>
-      <SContentContainer>
-        <SContent>埼玉県出身のWebエンジニア。早稲田大学を卒業後、ホテルの運営会社で現場での接客業務やレベニューマネジメント業務に携わりました。退職を機に独学でプログラミングの勉強を開始し、2021年3月にIT業界へ転職。フロントエンドエンジニアとして、既存システムの改修や機能拡張、新規開発に携わっています。業務ではHTML, CSS, SCSS, JavaScript, jQuery(, PHP)を使用しています。</SContent>
-        <ul>
-          <SLink>- Github: <a href='https://github.com/chiuney'>https://github.com/chiuney</a></SLink>
-          <SLink>- Blog: <a href='https://qiita.com/chiuney'>https://qiita.com/chiuney</a></SLink>
-          <SLink>- Twitter: <a href='https://twitter.com/chiuney6_'>https://twitter.com/chiuney6_</a></SLink>
-        </ul>
-      </SContentContainer>
-      <SkilCards skills={skills}></SkilCards>
+      <STitleContainer>
+        <SH1>Chiuney's Portfolio</SH1>
+        <SComment>React.jsのアウトプットとして作成しました。</SComment>
+        <SLink>ABOUT ME</SLink>
+      </STitleContainer>
     </SContainer>
+    <SMainContainer>
+      <SHeaderImg src={backgroundDesk}/>
+    </SMainContainer>
     </>
   );
 }
 
-const SContainer = styled.div`
-  text-align: center;
-  margin: 0 0 60px 0;
+// MAIN
+const SMainContainer = styled.div`
+  height: auto;
+  background: linear-gradient(#000, #201c09);
 `
-const SH1 = styled.h1`
-  font-size: 3.56rem;
-  font-weight: 500;
-  line-height: 110%;
-  margin: 5rem 0 1.424rem 0;
-`
-const SContentContainer = styled.div`
-  width: 50%;
-  margin: 0 auto;
-`
-const SContent = styled.p`
-  margin: 0 auto 2rem;
-  font-size: 15px;
-  /* text-align: left; */
+const SHeaderImg = styled.img`
+  /* height: 40vh; */
+  width: 100vw;
+  background-size:  100%;
+  background-repeat: no-repeat;
 `
 
-const SLink = styled.li`
-  width: 300px;
-  list-style: none;
-  text-align: left;
-  margin: 0 auto;
+// HEADER
+const SContainer = styled.div`
+  text-align: center;
+  /* margin: 0 0 60px 0; */
+  height: 80vh;
+  background-image: url(${backgroundPc});
+  background-size:  cover;
+  background-repeat: no-repeat;
+  position: relative;
+`
+const STitleContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+`
+const SH1 = styled.h1`
+  font-family: 'Noto Serif',serif;
+  font-weight: 400;
+  font-size: 34px;
+  letter-spacing: .08em;
+  color: #fff;
+`
+const SComment = styled.p`
+  color: #fff;
+  margin: 18px 0 0 0;
+`
+const SLink = styled.a`
+  display:block;
+  margin: 16px auto 0 auto;
+  width: fit-content;
+  padding: 14px 28px;
+  background-color: transparent;
+  font-size: 11px;
+  color: #fff;
+  font-family: "Harmonia Sans",sans-serif;
+  font-weight: 400;
+  border: 1px solid #fff;
+  box-shadow: none;
 `

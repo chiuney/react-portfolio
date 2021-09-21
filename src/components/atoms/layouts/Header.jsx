@@ -5,8 +5,8 @@ export const Header = (props) => {
   return (
     <>
       <SHeader>
-        <SLink to="/">Profile</SLink><br />
-        {/* <SLink to="/about">ABOUT</SLink><br /> */}
+        <SLink to="/">Top</SLink><br />
+        <SLink to="/about">About</SLink><br />
         <SLink to="/carrer">History</SLink>
         <SLink to="/personality">Personality</SLink>
       </SHeader>
@@ -17,14 +17,14 @@ export const Header = (props) => {
 const SHeader = styled.header`
   height: 60px;
   width: 100%;
-  background: #11999e;
+  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;
 `
 
 const SLink = styled(Link)`
-  color: #fff;
+  color: #bea76f;
   margin: 8px;
   text-decoration: none;
   &:hover{
