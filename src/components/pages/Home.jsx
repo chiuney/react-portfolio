@@ -19,12 +19,12 @@ export const Home = () => {
       </SContainer>
       <SMainContainer>
         <SHeaderImg src={backgroundDesk}/>
-        <SContensContainerF>
+        <SContensContainerFirst>
           <SContentsRight>
             <SComment>History</SComment>
             <SLink>VIEW MORE</SLink>
           </SContentsRight>
-        </SContensContainerF>
+        </SContensContainerFirst>
         <SContensContainerEven>
           <SContentsLeft>
             <SComment>Personality</SComment>
@@ -42,42 +42,30 @@ export const Home = () => {
   );
 }
 
-const SContensContainerF = styled.div`
-  margin: -80px auto 0 auto;
+const SContentsContainerProto = styled.div`
   width: 80%;
   max-width: 1000px;
   height: 60vh;
   max-height: 500px;
-  background-image: url(${backgroundWorks});
+  position: relative;
   background-size:  cover;
   background-repeat: no-repeat;
-  /* display: flex; */
-  position: relative;
 `
 
-const SContensContainerEven = styled.div`
-  width: 80%;
-  max-width: 1000px;
-  height: 60vh;
-  max-height: 500px;
+const SContensContainerFirst = styled(SContentsContainerProto)`
+  margin: -80px auto 0 auto;
+  background-image: url(${backgroundWorks});
+`
+
+const SContensContainerEven = styled(SContentsContainerProto)`
   margin: 0 auto;
   background-image: url(${backgroundItalia});
   background-size:  cover;
   background-repeat: no-repeat;
-  /* display: flex; */
-  position: relative;
 `
-const SContensContainerOdd = styled.div`
-  width: 80%;
-  max-width: 1000px;
-  height: 60vh;
-  max-height: 500px;
-  margin: 0 auto;
+const SContensContainerOdd = styled(SContentsContainerProto)`
+  margin: 0 auto 60px;
   background-image: url(${backgroundHistory});
-  background-size:  cover;
-  background-repeat: no-repeat;
-  /* display: flex; */
-  position: relative;
 `
 
 // CONTENTS
