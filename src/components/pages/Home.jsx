@@ -1,40 +1,129 @@
 import styled from 'styled-components';
 import backgroundPc from './img/background-pc.jpg'
-import backgroundDesk from './img/background-desk.jpg'
+import backgroundDesk from './img/background-header.jpg'
+import backgroundTree from './img/background-tree.jpg'
+// import backgroundPersonality from './img/background-personality.JPG'
+import backgroundItalia from './img/background-italia.JPG'
+import backgroundWorks from './img/background-works.JPG'
+import backgroundHistory from './img/background-history.JPG'
 
 export const Home = () => {
   return (
     <>
-    <SContainer>
-      <STitleContainer>
-        <SH1>Chiuney's Portfolio</SH1>
-        <SComment>React.jsのアウトプットとして作成しました。</SComment>
-        <SLink>ABOUT ME</SLink>
-      </STitleContainer>
-    </SContainer>
-    <SMainContainer>
-      <SHeaderImg src={backgroundDesk}/>
-    </SMainContainer>
+      <SContainer>
+        <STitleContainer>
+          <SH1>Chiuney's Portfolio</SH1>
+          <SComment>React.jsのアウトプットとして作成しました。</SComment>
+          <SLink>ABOUT ME</SLink>
+        </STitleContainer>
+      </SContainer>
+      <SMainContainer>
+        <SHeaderImg src={backgroundDesk}/>
+        <SContensContainerF>
+          <SContentsRight>
+            <SComment>History</SComment>
+            <SLink>VIEW MORE</SLink>
+          </SContentsRight>
+        </SContensContainerF>
+        <SContensContainerEven>
+          <SContentsLeft>
+            <SComment>Personality</SComment>
+            <SLink>VIEW MORE</SLink>
+          </SContentsLeft>
+        </SContensContainerEven>
+        <SContensContainerOdd>
+          <SContentsRight>
+            <SComment>Products</SComment>
+            <SLink>VIEW MORE</SLink>
+          </SContentsRight>
+        </SContensContainerOdd>
+      </SMainContainer>
     </>
   );
 }
 
+const SContensContainerF = styled.div`
+  margin: -80px auto 0 auto;
+  width: 80%;
+  max-width: 1000px;
+  height: 60vh;
+  max-height: 500px;
+  background-image: url(${backgroundWorks});
+  background-size:  cover;
+  background-repeat: no-repeat;
+  /* display: flex; */
+  position: relative;
+`
+
+const SContensContainerEven = styled.div`
+  width: 80%;
+  max-width: 1000px;
+  height: 60vh;
+  max-height: 500px;
+  margin: 0 auto;
+  background-image: url(${backgroundItalia});
+  background-size:  cover;
+  background-repeat: no-repeat;
+  /* display: flex; */
+  position: relative;
+`
+const SContensContainerOdd = styled.div`
+  width: 80%;
+  max-width: 1000px;
+  height: 60vh;
+  max-height: 500px;
+  margin: 0 auto;
+  background-image: url(${backgroundHistory});
+  background-size:  cover;
+  background-repeat: no-repeat;
+  /* display: flex; */
+  position: relative;
+`
+
+// CONTENTS
+const SContentsLeft = styled.a`
+  width: 80%;
+  height: 500px;
+  max-width: 1000px;
+  /* display: block; */
+  position: absolute;
+  top: 90%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  z-index: 999;
+`
+const SContentsRight = styled.a`
+  width: 80%;
+  height: 500px;
+  max-width: 1000px;
+  /* display: block; */
+  position: absolute;
+  top: 90%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  z-index: 999;
+`
+
 // MAIN
 const SMainContainer = styled.div`
-  height: auto;
   background: linear-gradient(#000, #201c09);
 `
 const SHeaderImg = styled.img`
-  /* height: 40vh; */
-  width: 100vw;
-  background-size:  100%;
+  height: auto;
+  max-height: 500px;
+  overflow: hidden;
+  width: 100%;
+  background-size: cover;
   background-repeat: no-repeat;
 `
 
 // HEADER
 const SContainer = styled.div`
   text-align: center;
-  /* margin: 0 0 60px 0; */
   height: 80vh;
   background-image: url(${backgroundPc});
   background-size:  cover;
@@ -58,7 +147,8 @@ const SH1 = styled.h1`
 `
 const SComment = styled.p`
   color: #fff;
-  margin: 18px 0 0 0;
+  width: fit-content;
+  margin: 18px auto 0 auto;
 `
 const SLink = styled.a`
   display:block;

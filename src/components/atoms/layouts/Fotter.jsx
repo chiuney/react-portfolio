@@ -1,6 +1,6 @@
-import { BrowserRouter, Link } from 'react-router-dom';
+// import { BrowserRouter, Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Router } from '../../router/Router';
+// import { Router } from '../../router/Router';
 
 export const Fotter = (props) => {
   // const {children} = props;
@@ -23,4 +23,5 @@ const SFotter = styled.footer`
   position: fixed;
   bottom: 0;
   color: #fff;
+  z-index: 9999;
 `
