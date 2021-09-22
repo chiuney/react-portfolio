@@ -64,7 +64,7 @@ const SContensContainerEven = styled(SContentsContainerProto)`
   background-repeat: no-repeat;
 `
 const SContensContainerOdd = styled(SContentsContainerProto)`
-  margin: 0 auto 60px;
+  margin: 0 auto;
   background-image: url(${backgroundHistory});
 `
 
