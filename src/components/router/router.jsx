@@ -17,19 +17,19 @@ export const Router = () => {
           </DefaultLayout>
         </Route>
         <Route exact path="/about">
-          <HeaderOnly>
+          <DefaultLayout>
             <About></About>
-          </HeaderOnly>
+          </DefaultLayout>
         </Route>
         <Route exact path="/carrer">
-          <HeaderOnly>
+          <DefaultLayout>
             <Carrer></Carrer>
-          </HeaderOnly>
+          </DefaultLayout>
         </Route>
         <Route exact path="/personality">
-          <HeaderOnly>
+          <DefaultLayout>
             <Personality></Personality>
-          </HeaderOnly>
+          </DefaultLayout>
         </Route>
       </Switch>
     </BrowserRouter>

@@ -5,7 +5,7 @@ import { CarrerCard } from "../organisms/carrer/CarrerCard";
 const step = [{
     title: '独学開始',
     startDate: '2020/9',
-    content:`プログラミングの勉強を始めました。ProgateでHTML, CSS, Ruby, JavaSctipyの基礎のきを学びました。`,
+    content:`プログラミングの勉強を始めました。ProgateでHTML, CSS, Ruby, JavaSctiptの基礎のきを学びました。ドットインストールとかもやってました。`,
   },
   {
     title: 'Ruby on Railsの勉強開始',
@@ -47,7 +47,7 @@ const step = [{
 export const Carrer = () => {
   return (
     <>
-      <h1>Carrer</h1>
+      <STitle>History</STitle>
       <SContainer>
         <CarrerCard step={step}></CarrerCard>
       </SContainer>
@@ -58,14 +58,15 @@ export const Carrer = () => {
 const SContainer = styled.div`
   max-width: 1170px;
   padding: 0 0 0 32px;
-  margin: 64px 0;
+  margin: 32px 0 64px;
+  background: linear-gradient(#000, #201c09);
   position: relative;
   ::before {
     content: '';
     display: inline-block;
-    width: 3px;
+    width: 2px;
     height: 105%;
-    background: #11999e;
+    background: #bea76f;
     position: absolute;
     left: 30px;
   }
@@ -81,5 +82,20 @@ const SContainer = styled.div`
       -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
     }
+  `}
+`
+const STitle = styled.h2`
+  margin: 0 0 0 70px;
+  font-size: 24px;
+  letter-spacing: .08em;
+  color: #fff;
+  font-family: "Noto Serif",serif;
+  font-style: normal;
+  font-weight: 400;
+  ${media.greaterThan("large")`
+    /* screen width is greater than 1170px (large) */
+    width: 100%;
+    margin: 0;
+    text-align: center;
   `}
 `

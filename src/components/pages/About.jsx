@@ -70,7 +70,6 @@ export const About = () => {
             <SLink>- Twitter: <SA href='https://twitter.com/chiuney6_'>https://twitter.com/chiuney6_</SA></SLink>
           </ul>
           <SkilCards skills={skills}></SkilCards>
-
         </SMainContainer>
       </SContentContainer>
     </>
