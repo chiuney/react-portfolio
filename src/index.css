@@ -17,3 +17,7 @@ body {
 code {
   font-family: 'Noto Serif', serif, 'Capriola', "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Meiryo, sans-serif;
 }
+
+.gold {
+  color: #bea76f;
+}
