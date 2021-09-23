@@ -1,22 +1,24 @@
-// import { BrowserRouter, Link } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-// import { Router } from '../../router/Router';
+import { IconFotter } from '../icon/IconFotter';
 
 export const Fotter = (props) => {
   // const {children} = props;
   return (
     <>
       <SFotter>
-        <SNav>
-          <SUl>
-            <SLink to="/">Top</SLink>
-            <SLink to="/about">About</SLink>
-            <SLink to="/carrer">History</SLink>
-            <SLink to="/personality">Personality</SLink>
-         </SUl>
-        </SNav>
-        <SP>&copy; 2021 React Inc.</SP>
+        <SLinks>
+          <SNav>
+            <SUl>
+              <SLink to="/">Top</SLink>
+              <SLink to="/about">About</SLink>
+              <SLink to="/carrer">History</SLink>
+              <SLink to="/personality">Personality</SLink>
+            </SUl>
+          </SNav>
+          <IconFotter></IconFotter>
+        </SLinks>
+        <SP>&copy; 2021 Chiuney's portfolio</SP>
       </SFotter>
     </>
   );
@@ -35,10 +37,26 @@ const SFotter = styled.footer`
 `
 
 const SNav = styled.nav`
-  margin: 40px 0 0 0;
+margin: 0 20px 0 0;
+  position:relative;
+  ::after {
+   content: "";
+   display: inline-block;
+   width: 1px;
+   height: 20px;
+   background: #fff;
+   position: absolute;
+   top: 0px;
+   right: -10px;
+}
 `
 
 const SUl = styled.ul`
+`
+const SLinks = styled.div`
+  margin: 40px 0 0 0;
+  display: flex;
+  align-items: center;
 `
 
 const SLink = styled(Link)`
@@ -58,5 +76,5 @@ const SP = styled.p`
   font-size: 10px;
   letter-spacing: .08em;
   color: #fff;
-  margin: 30px 0 30px 0;
+  margin: 10px 0 30px 0;
 `

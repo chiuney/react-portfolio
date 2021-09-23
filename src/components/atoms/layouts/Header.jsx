@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import Qiita from '../../pages/icon/Qiita-logo.png'
+import { IconHeader } from '../icon/IconHeader';
 
 export const Header = (props) => {
   const [ showMenu, setShowMenu ] = useState(false);
@@ -11,14 +11,7 @@ export const Header = (props) => {
   return (
     <>
       <SHeader>
-        <SIcons>
-          <SIconLink><a href='https://twitter.com/chiuney6_'target='_blank' rel="noreferrer"><i class="fab fa-twitter gold fa-lg"></i></a></SIconLink>
-          <SIconLink><a href='https://github.com/chiuney'target='_blank' rel="noreferrer"><i class="fab fa-github gold fa-lg"></i></a></SIconLink>
-          {/* <SIconLink> */}
-            <SQiita href='https://qiita.com/chiuney'target='_blank' rel="noreferrer">
-            </SQiita>
-          {/* </SIconLink> */}
-        </SIcons>
+        <IconHeader></IconHeader>
         {showMenu ? (
           <SNav>
             <SUl>
@@ -40,28 +33,6 @@ export const Header = (props) => {
     </>
   );
 }
-const SQiita = styled.a`
-  width: 40px;
-  height: 40px;
-  margin: 0 0 0 12px;
-  mask: no-repeat center/70%;
-  -webkit-mask: no-repeat center/70%;
-  background: #bea76f;
-  display: inline-block;
-  mask-image: url(${Qiita});
-`
-const SIcons = styled.ul`
-  margin: 0 auto 0 0;
-  display: flex;
-`
-
-const SIconLink = styled.li`
-  list-style: none;
-  margin: 0 0 0 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
 
 const SNav = styled.nav`
   height: 66px;
