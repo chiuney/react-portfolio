@@ -36,7 +36,7 @@ const SH3 = styled.h3`
 const SGridContainer = styled.div`
   width: 70%;
   height: auto;
-  margin: 0 auto 80px;
+  margin: 0 auto;
   border-radius: 4px;
   box-shadow: 1px 2px 8px 0 rgba(61, 63, 69, 0.25);
   border: solid 1px #e3e5e8;

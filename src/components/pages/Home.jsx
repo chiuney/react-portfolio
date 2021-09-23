@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import backgroundPc from './img/background-pc.jpg'
 import backgroundDesk from './img/background-header.jpg'
-import backgroundTree from './img/background-tree.jpg'
 // import backgroundPersonality from './img/background-personality.JPG'
 import backgroundItalia from './img/background-italia.JPG'
 import backgroundWorks from './img/background-works.JPG'
