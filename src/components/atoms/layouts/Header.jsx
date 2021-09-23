@@ -15,10 +15,10 @@ export const Header = (props) => {
         {showMenu ? (
           <SNav>
             <SUl>
-              <SLink to="/">Top</SLink>
-              <SLink to="/skill">Skill</SLink>
-              <SLink to="/history">History</SLink>
-              <SLink to="/personality">Personality</SLink>
+              <SLink to="/" onClick={() => setShowMenu(false)}>Top</SLink>
+              <SLink to="/skill" onClick={() => setShowMenu(false)}>Skill</SLink>
+              <SLink to="/history" onClick={() => setShowMenu(false)}>History</SLink>
+              <SLink to="/personality" onClick={() => setShowMenu(false)}>Personality</SLink>
             </SUl>
           </SNav>
         ) : (
