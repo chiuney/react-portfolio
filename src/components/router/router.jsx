@@ -2,8 +2,8 @@ import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import { DefaultLayout } from "../templates/DefaultLayout"
 import { HeaderOnly } from "../templates/HeaderOnly"
-import { About } from "../pages/About";
-import { Carrer } from "../pages/Carrer";
+import { Skill } from "../pages/Skill";
+import { History } from "../pages/History";
 import { Home } from "../pages/Home";
 import { Personality } from "../pages/Personality";
 
@@ -16,14 +16,14 @@ export const Router = () => {
             <Home></Home>
           </DefaultLayout>
         </Route>
-        <Route exact path="/about">
+        <Route exact path="/skill">
           <DefaultLayout>
-            <About></About>
+            <Skill></Skill>
           </DefaultLayout>
         </Route>
-        <Route exact path="/carrer">
+        <Route exact path="/history">
           <DefaultLayout>
-            <Carrer></Carrer>
+            <History></History>
           </DefaultLayout>
         </Route>
         <Route exact path="/personality">

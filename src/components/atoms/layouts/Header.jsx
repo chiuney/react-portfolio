@@ -16,8 +16,8 @@ export const Header = (props) => {
           <SNav>
             <SUl>
               <SLink to="/">Top</SLink>
-              <SLink to="/about">About</SLink>
-              <SLink to="/carrer">History</SLink>
+              <SLink to="/skill">Skill</SLink>
+              <SLink to="/history">History</SLink>
               <SLink to="/personality">Personality</SLink>
             </SUl>
           </SNav>

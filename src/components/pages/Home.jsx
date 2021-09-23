@@ -13,7 +13,7 @@ export const Home = () => {
         <STitleContainer>
           <SH1>Chiuney's Portfolio</SH1>
           <SComment>React.jsのアウトプットとして作成しました。</SComment>
-          <SLink>ABOUT ME</SLink>
+          <SLink>SKILL</SLink>
         </STitleContainer>
       </SContainer>
       <SMainContainer>

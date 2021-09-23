@@ -44,7 +44,7 @@ const step = [{
   },
 ]
 
-export const Carrer = () => {
+export const History = () => {
   return (
     <>
       <STitle>History</STitle>

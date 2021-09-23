@@ -50,7 +50,7 @@ const skills = [
   },
 ]
 
-export const About = () => {
+export const Skill = () => {
   return (
     <>
       <SContentContainer>
@@ -64,12 +64,7 @@ export const About = () => {
           </STitleContainer>
         </SHeader>
         <SMainContainer>
-          <ul>
-            <SLink>- Github:  <SA href='https://github.com/chiuney'>https://github.com/chiuney</SA></SLink>
-            <SLink>- Blog:    <SA href='https://qiita.com/chiuney'>https://qiita.com/chiuney</SA></SLink>
-            <SLink>- Twitter: <SA href='https://twitter.com/chiuney6_'>https://twitter.com/chiuney6_</SA></SLink>
-          </ul>
-          <SkilCards skills={skills}></SkilCards>
+
         </SMainContainer>
       </SContentContainer>
     </>
