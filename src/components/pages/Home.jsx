@@ -1,7 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import backgroundPc from './img/background-pc.jpg'
 import backgroundDesk from './img/background-header.jpg'
-// import backgroundPersonality from './img/background-personality.JPG'
 import backgroundItalia from './img/background-italia.JPG'
 import backgroundWorks from './img/background-works.JPG'
 import backgroundHistory from './img/background-history.JPG'
@@ -12,28 +12,28 @@ export const Home = () => {
       <SContainer>
         <STitleContainer>
           <SH1>Chiuney's Portfolio</SH1>
-            <SContent>埼玉県出身のWebエンジニア。早稲田大学を卒業後、ホテルの運営会社で現場での接客業務やレベニューマネジメント*業務に携わる。退職を機に独学でプログラミングの勉強を開始し、2021年3月にIT業界へ転職。フロントエンドエンジニアとして既存システムの改修や機能拡張、新規開発に携わっています。</SContent>
-            <SComment>*各店舗の需要予測と利益の最大化を目的とした施策</SComment>
-          <SLink>SKILL</SLink>
+          <SContent>埼玉県出身のWebエンジニア。早稲田大学を卒業後、ホテルの運営会社で現場での接客業務やレベニューマネジメント*業務に携わる。退職を機に独学でプログラミングの勉強を開始し、2021年3月にIT業界へ転職。フロントエンドエンジニアとして既存システムの改修や機能拡張、新規開発に携わっています。</SContent>
+          <SComment>*各店舗の需要予測と利益の最大化を目的とした施策</SComment>
+          <SLink to="/skill">SKILL</SLink>
         </STitleContainer>
       </SContainer>
       <SMainContainer>
         <SHeaderImg src={backgroundDesk}/>
         <SContensContainerFirst>
           <SContentsRight>
-            <SComment>History</SComment>
-            <SLink>VIEW MORE</SLink>
+            <SContentTitle>History</SContentTitle>
+            <SLink to="/history">VIEW MORE</SLink>
           </SContentsRight>
         </SContensContainerFirst>
         <SContensContainerEven>
           <SContentsLeft>
-            <SComment>Personality</SComment>
-            <SLink>VIEW MORE</SLink>
+            <SContentTitle>Personality</SContentTitle>
+            <SLink to="/personality">VIEW MORE</SLink>
           </SContentsLeft>
         </SContensContainerEven>
         <SContensContainerOdd>
           <SContentsRight>
-            <SComment>Products</SComment>
+            <SContentTitle>Products</SContentTitle>
             <SLink>VIEW MORE</SLink>
           </SContentsRight>
         </SContensContainerOdd>
@@ -73,7 +73,6 @@ const SContentsLeft = styled.a`
   width: 80%;
   height: 500px;
   max-width: 1000px;
-  /* display: block; */
   position: absolute;
   top: 90%;
   left: 25%;
@@ -86,7 +85,6 @@ const SContentsRight = styled.a`
   width: 80%;
   height: 500px;
   max-width: 1000px;
-  /* display: block; */
   position: absolute;
   top: 90%;
   left: 75%;
@@ -94,6 +92,10 @@ const SContentsRight = styled.a`
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   z-index: 999;
+`
+const SContentTitle = styled.p`
+  width: fit-content;
+  margin: 18px auto 0 auto;
 `
 
 // MAIN
@@ -140,18 +142,27 @@ const SComment = styled.p`
   line-height: 24px;
   width: 500px;
 `
-const SLink = styled.a`
+const SLink = styled(Link)`
+  color: #fff;
+  text-decoration: none;
   display:block;
   margin: 16px auto 0 auto;
   width: fit-content;
   padding: 14px 28px;
   background-color: transparent;
   font-size: 11px;
-  color: #fff;
   font-family: "Harmonia Sans",sans-serif;
   font-weight: 400;
   border: 1px solid #fff;
   box-shadow: none;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    background: #fff;
+    opacity: .6;
+    color: #000;
+  }
 `
 const SContent = styled.p`
   margin: 30px 0 0 0;
