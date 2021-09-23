@@ -30,6 +30,8 @@ const SFotter = styled.footer`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+  z-index: 9999;
 `
 
 const SNav = styled.nav`
