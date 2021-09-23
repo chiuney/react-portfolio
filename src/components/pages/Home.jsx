@@ -12,7 +12,8 @@ export const Home = () => {
       <SContainer>
         <STitleContainer>
           <SH1>Chiuney's Portfolio</SH1>
-          <SComment>React.jsのアウトプットとして作成しました。</SComment>
+            <SContent>埼玉県出身のWebエンジニア。早稲田大学を卒業後、ホテルの運営会社で現場での接客業務やレベニューマネジメント*業務に携わる。退職を機に独学でプログラミングの勉強を開始し、2021年3月にIT業界へ転職。フロントエンドエンジニアとして既存システムの改修や機能拡張、新規開発に携わっています。</SContent>
+            <SComment>*各店舗の需要予測と利益の最大化を目的とした施策</SComment>
           <SLink>SKILL</SLink>
         </STitleContainer>
       </SContainer>
@@ -133,9 +134,11 @@ const SH1 = styled.h1`
   color: #fff;
 `
 const SComment = styled.p`
-  color: #fff;
   width: fit-content;
-  margin: 18px auto 0 auto;
+  font-size: 10px;
+  letter-spacing: .05em;
+  line-height: 24px;
+  width: 500px;
 `
 const SLink = styled.a`
   display:block;
@@ -149,4 +152,12 @@ const SLink = styled.a`
   font-weight: 400;
   border: 1px solid #fff;
   box-shadow: none;
+`
+const SContent = styled.p`
+  margin: 30px 0 0 0;
+  font-size: 13px;
+  letter-spacing: .05em;
+  line-height: 24px;
+  color: #fff;
+  width: 500px;
 `
