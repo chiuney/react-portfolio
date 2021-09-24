@@ -7,13 +7,14 @@ export const SUl = styled.ul`
 `
 
 export const SA = styled.a`
-width: 40px;
-height: 40px;
-margin: 0 0 0 12px;
-mask: no-repeat center/70%;
--webkit-mask: no-repeat center/70%;
-display: inline-block;
-mask-image: url(${Qiita});
+  width: 30px;
+  height: 30px;
+  margin: -2px 0 0 15px;
+  position: relative;
+  mask: no-repeat center/70%;
+  -webkit-mask: no-repeat center/70%;
+  display: inline-block;
+  mask-image: url(${Qiita});
 `
 
 export const SLi = styled.li`
