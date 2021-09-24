@@ -6,6 +6,7 @@ import { Skill } from "../pages/Skill";
 import { History } from "../pages/History";
 import { Home } from "../pages/Home";
 import { Personality } from "../pages/Personality";
+import { Products } from "../pages/Products";
 
 export const Router = () => {
   return(
@@ -29,6 +30,11 @@ export const Router = () => {
         <Route exact path="/personality">
           <DefaultLayout>
             <Personality></Personality>
+          </DefaultLayout>
+        </Route>
+        <Route exact path="/products">
+          <DefaultLayout>
+            <Products></Products>
           </DefaultLayout>
         </Route>
       </Switch>

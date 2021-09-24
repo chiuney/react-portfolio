@@ -19,6 +19,7 @@ export const Header = (props) => {
               <SLink to="/skill" onClick={() => setShowMenu(false)}>Skill</SLink>
               <SLink to="/history" onClick={() => setShowMenu(false)}>History</SLink>
               <SLink to="/personality" onClick={() => setShowMenu(false)}>Personality</SLink>
+              <SLink to="/products" onClick={() => setShowMenu(false)}>Puroducts</SLink>
             </SUl>
           </SNav>
         ) : (

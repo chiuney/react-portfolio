@@ -11,9 +11,10 @@ export const Fotter = (props) => {
           <SNav>
             <SUl>
               <SLink to="/">Top</SLink>
-              <SLink to="/about">About</SLink>
-              <SLink to="/carrer">History</SLink>
+              <SLink to="/skill">Skill</SLink>
+              <SLink to="/history">History</SLink>
               <SLink to="/personality">Personality</SLink>
+              <SLink to="/products">Puroducts</SLink>
             </SUl>
           </SNav>
           <IconFotter></IconFotter>

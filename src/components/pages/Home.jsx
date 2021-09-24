@@ -34,7 +34,7 @@ export const Home = () => {
         <SContensContainerOdd>
           <SContentsRight>
             <SContentTitle>Products</SContentTitle>
-            <SLink>VIEW MORE</SLink>
+            <SLink to="/products">VIEW MORE</SLink>
           </SContentsRight>
         </SContensContainerOdd>
       </SMainContainer>
