@@ -44,7 +44,7 @@ const SLogoTitle = styled.h1`
   font-weight: 400;
 `
 const SLogo = styled(Link)`
-  position: fixed;
+  position: absolute;
   text-decoration: none;
 `
 const SNav = styled.nav`
