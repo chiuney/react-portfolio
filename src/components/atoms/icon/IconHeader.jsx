@@ -23,9 +23,8 @@ const SQiita = styled(SA)`
   `}
 `
 const SIcons = styled(SUl)`
-  ${media.lessThan("medium")`
-    /* screen width is less than 768px (medium) */
-
+  ${media.lessThan("small")`
+    display: none;
   `}
 `
 const SIconLink = styled(SLi)`
