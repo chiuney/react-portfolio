@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from "styled-media-query";
 import { Link } from 'react-router-dom';
 import backgroundPc from './img/background-pc.jpg'
 import backgroundDesk from './img/background-header.jpg'
@@ -19,24 +20,24 @@ export const Home = () => {
       </SContainer>
       <SMainContainer>
         <SHeaderImg src={backgroundDesk}/>
-        <SContensContainerFirst>
+        <SContensContainerHistory>
           <SContentsRight>
             <SContentTitle>History</SContentTitle>
             <SLink to="/history">VIEW MORE</SLink>
           </SContentsRight>
-        </SContensContainerFirst>
-        <SContensContainerEven>
+        </SContensContainerHistory>
+        <SContensContainerPersonality>
           <SContentsLeft>
             <SContentTitle>Personality</SContentTitle>
             <SLink to="/personality">VIEW MORE</SLink>
           </SContentsLeft>
-        </SContensContainerEven>
-        <SContensContainerOdd>
+        </SContensContainerPersonality>
+        <SContensContainerProducts>
           <SContentsRight>
             <SContentTitle>Products</SContentTitle>
             <SLink to="/products">VIEW MORE</SLink>
           </SContentsRight>
-        </SContensContainerOdd>
+        </SContensContainerProducts>
       </SMainContainer>
     </>
   );
@@ -52,46 +53,36 @@ const SContentsContainerProto = styled.div`
   background-repeat: no-repeat;
 `
 
-const SContensContainerFirst = styled(SContentsContainerProto)`
+const SContensContainerHistory = styled(SContentsContainerProto)`
   margin: -80px auto 0 auto;
   background-image: url(${backgroundWorks});
 `
 
-const SContensContainerEven = styled(SContentsContainerProto)`
+const SContensContainerPersonality = styled(SContentsContainerProto)`
   margin: 0 auto;
   background-image: url(${backgroundItalia});
-  background-size:  cover;
-  background-repeat: no-repeat;
 `
-const SContensContainerOdd = styled(SContentsContainerProto)`
+const SContensContainerProducts = styled(SContentsContainerProto)`
   margin: 0 auto;
   background-image: url(${backgroundHistory});
 `
 
 // CONTENTS
-const SContentsLeft = styled.div`
-  width: 80%;
-  height: 500px;
-  max-width: 1000px;
-  position: absolute;
-  top: 90%;
-  left: 25%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  z-index: 999;
+const SContents = styled.div`
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  ${media.lessThan("small")`
+    width: 100%;
+  `}
 `
-const SContentsRight = styled.div`
-  width: 80%;
-  height: 500px;
-  max-width: 1000px;
-  position: absolute;
-  top: 90%;
-  left: 75%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  z-index: 999;
+const SContentsLeft = styled(SContents)`
+`
+const SContentsRight = styled(SContents)`
+  margin: 0 0 0 auto;
 `
 const SContentTitle = styled.p`
   width: fit-content;
@@ -121,6 +112,7 @@ const SContainer = styled.div`
   position: relative;
 `
 const STitleContainer = styled.div`
+  width: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -136,11 +128,12 @@ const SH1 = styled.h1`
   color: #fff;
 `
 const SComment = styled.p`
+  margin: 0 auto;
   width: fit-content;
+  max-width: 500px;
   font-size: 10px;
   letter-spacing: .05em;
   line-height: 24px;
-  width: 500px;
 `
 const SLink = styled(Link)`
   color: #fff;
@@ -165,10 +158,11 @@ const SLink = styled(Link)`
   }
 `
 const SContent = styled.p`
-  margin: 30px 0 0 0;
+  margin: 30px auto 0 auto;
   font-size: 13px;
   letter-spacing: .05em;
   line-height: 24px;
   color: #fff;
-  width: 500px;
+  width: 90%;
+  max-width: 500px;
 `
