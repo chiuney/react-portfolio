@@ -12,6 +12,7 @@ export const Header = (props) => {
     <>
       <SHeader>
         <IconHeader></IconHeader>
+        <SLogo to="/"><SLogoTitle>Chiuney's<br/>Portfolio</SLogoTitle></SLogo>
         {showMenu ? (
           <SNav>
             <SUl>
@@ -35,7 +36,17 @@ export const Header = (props) => {
     </>
   );
 }
-
+const SLogoTitle = styled.h1`
+  margin: 0 auto;
+  color: #bea76f;
+  line-height: 1;
+  font-family: cursive;
+  font-weight: 400;
+`
+const SLogo = styled(Link)`
+  position: fixed;
+  text-decoration: none;
+`
 const SNav = styled.nav`
   height: 66px;
   position: absolute;
@@ -85,7 +96,7 @@ const SLines = styled.span`
   transition: 1s;
   border-radius: 4px;
 `
-
+// ハンバーガー
 const SLine1 = styled(SLines)`
   top: 35%;
 `
@@ -105,3 +116,16 @@ const SHeader = styled.header`
   position: relative;
   z-index: 1;
 `
+
+
+// ${media.lessThan("medium")`
+// /* screen width is less than 768px (medium) */
+// `}
+
+// ${media.between("medium", "large")`
+// /* screen width is between 768px (medium) and 1170px (large) */
+// `}
+
+// ${media.greaterThan("large")`
+// /* screen width is greater than 1170px (large) */
+// `}
