@@ -2,8 +2,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { IconFotter } from '../icon/IconFotter';
 
-export const Fotter = (props) => {
-  // const {children} = props;
+export const Fotter = () => {
   return (
     <>
       <SFotter>
@@ -15,6 +14,7 @@ export const Fotter = (props) => {
               <SLink to="/history">History</SLink>
               <SLink to="/personality">Personality</SLink>
               <SLink to="/products">Puroducts</SLink>
+              <SLink to="contact">Contact</SLink>
             </SUl>
           </SNav>
           <IconFotter></IconFotter>

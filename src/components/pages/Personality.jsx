@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import styled from "styled-components";
-import media from "styled-media-query";
-import { NoteContents } from '../atoms/notes/NoteContent';
 import { ModalImage } from "../organisms/personality/ModalImg";
 import mindMap from './img/101.png'
 import backgroundItalia from './img/background-italia.JPG'
@@ -62,7 +60,7 @@ export const Personality = () => {
             <STitle>presonality</STitle>
             <SContent>自己分析の一環として「自分を構成する101個のワード」を考えました。</SContent>
             <SButton src={mindMap} alt="101ワード" onClick={() => setShowImg(true)} >マインドマップ</SButton>
-            <SButton><SA href='https://note.com/sakikura/n/n652068a6e9bd' target='_blank' rel="noreferrer">note <i class="fas fa-external-link-alt"></i></SA></SButton>
+            <SButton><SA href='https://note.com/sakikura/n/n652068a6e9bd' target='_blank' rel="noreferrer">note <i className="fas fa-external-link-alt"></i></SA></SButton>
           </STitleContainer>
         </SHeader>
         <ModalImage showImg={showImg} setShowImg={setShowImg} mindMap={mindMap} ></ModalImage>

@@ -20,6 +20,7 @@ export const Header = (props) => {
               <SLink to="/history" onClick={() => setShowMenu(false)}>History</SLink>
               <SLink to="/personality" onClick={() => setShowMenu(false)}>Personality</SLink>
               <SLink to="/products" onClick={() => setShowMenu(false)}>Puroducts</SLink>
+              <SLink to="/contact" onClick={() => setShowMenu(false)}>Contact</SLink>
             </SUl>
           </SNav>
         ) : (
