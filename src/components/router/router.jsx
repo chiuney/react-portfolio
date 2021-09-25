@@ -1,7 +1,7 @@
 import { Route, Switch } from "react-router";
 import { BrowserRouter } from "react-router-dom";
 import { DefaultLayout } from "../templates/DefaultLayout"
-import { HeaderOnly } from "../templates/HeaderOnly"
+// import { HeaderOnly } from "../templates/HeaderOnly"
 import { Skill } from "../pages/Skill";
 import { History } from "../pages/History";
 import { Home } from "../pages/Home";

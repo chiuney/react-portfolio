@@ -69,7 +69,7 @@ const SContensContainerOdd = styled(SContentsContainerProto)`
 `
 
 // CONTENTS
-const SContentsLeft = styled.a`
+const SContentsLeft = styled.div`
   width: 80%;
   height: 500px;
   max-width: 1000px;
@@ -81,7 +81,7 @@ const SContentsLeft = styled.a`
   -ms-transform: translate(-50%, -50%);
   z-index: 999;
 `
-const SContentsRight = styled.a`
+const SContentsRight = styled.div`
   width: 80%;
   height: 500px;
   max-width: 1000px;

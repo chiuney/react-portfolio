@@ -7,10 +7,8 @@ export const IconFotter = () => {
       <SIcons>
         <SIconLink><a href='https://twitter.com/chiuney6_'target='_blank' rel="noreferrer"><i className="fab fa-twitter white fa-lg"></i></a></SIconLink>
         <SIconLink><a href='https://github.com/chiuney'target='_blank' rel="noreferrer"><i className="fab fa-github white fa-lg"></i></a></SIconLink>
-        {/* <SIconLink> */}
-          <SQiita href='https://qiita.com/chiuney'target='_blank' rel="noreferrer">
-          </SQiita>
-        {/* </SIconLink> */}
+        <SQiita href='https://qiita.com/chiuney'target='_blank' rel="noreferrer">
+        </SQiita>
       </SIcons>
     </>
   );

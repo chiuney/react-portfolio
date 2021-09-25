@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 import media from "styled-media-query";
 
@@ -7,7 +8,7 @@ export const CarrerCard = (props) => {
   return (
     <>
       {
-        step.map((e) => {
+        React.Children.toArray(step.map((e) => {
           return(
             <>
               <SStartDate>{e.startDate}</SStartDate>
@@ -20,7 +21,7 @@ export const CarrerCard = (props) => {
               </Skari>
             </>
           );
-        })
+        }))
       }
     </>
   );

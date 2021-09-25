@@ -23,4 +23,4 @@ export const SLi = styled.li`
   display: flex;
   align-items: center;
   justify-content: center;
-  `
+`

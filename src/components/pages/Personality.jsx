@@ -69,7 +69,7 @@ export const Personality = () => {
             <SNoteTitle>Pick up</SNoteTitle>
             <SNotes>
               {
-              notes.map((e,i) => {
+              React.Children.toArray(notes.map((e,i) => {
                 return(
                   <>
                     <SNote onClick={() => setShowContent(i)} content={e.content} key={e.id}>
@@ -77,7 +77,7 @@ export const Personality = () => {
                     </SNote>
                   </>
                 );
-              })
+              }))
             }
             </SNotes>
           </div>
@@ -171,17 +171,6 @@ const SContent = styled.p`
   margin: 0 0 100px 0;
   /* width: fit-content; */
   text-align: left;
-`
-const SLink = styled.li`
-  width: fit-content;
-  list-style: none;
-  text-align: center;
-  margin: 0 auto;
-`
-const SImg = styled.img`
-  width: 70%;
-  height: auto;
-  cursor: pointer;
 `
 const SButton = styled.div`
   display:block;

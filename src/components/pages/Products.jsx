@@ -1,6 +1,5 @@
+import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-// import backgroundHistory from './img/background-history.JPG'
 import backgroundPc from './img/background-pc.jpg'
 
 const products = [
@@ -22,7 +21,7 @@ export const Products = () => {
       <STitle>Product List</STitle>
       <SProducts>
         {
-          products.map((e,i) => {
+          React.Children.toArray(products.map((e,i) => {
             return(
               <>
                 <SProduct>
@@ -32,7 +31,7 @@ export const Products = () => {
                 </SProduct>
               </>
             );
-          })
+          }))
         }
       </SProducts>
     </SContainer>
@@ -64,10 +63,6 @@ const SProduct = styled.div`
   :last-child {
     pointer-events: none;
   }
-`
-const SLink = styled(Link)`
-  text-decoration: none;
-  color: #fff;
 `
 const SProductTitle = styled.h3`
   font-family: 'Noto Serif',serif;

@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from "styled-components";
 import backgroundHeader from './img/background-header-about.jpg'
 
@@ -78,7 +79,7 @@ export const Skill = () => {
           <SDetailTitle>Details</SDetailTitle>
             <SSkills>
               {
-              skills.map((e,i) => {
+              React.Children.toArray(skills.map((e,i) => {
                 return(
                   <>
                   <SSkill>
@@ -93,7 +94,7 @@ export const Skill = () => {
                   </SSkill>
                   </>
                 );
-              })
+              }))
             }
             </SSkills>
         </SMainContainer>
@@ -112,7 +113,7 @@ const SSkills = styled.ul`
   width: fit-content;
   cursor: pointer;
 `
-const SSkill = styled.div`
+const SSkill = styled.li`
   display: flex;
   height: auto;
   padding: 40px 0;
