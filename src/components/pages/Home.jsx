@@ -6,6 +6,7 @@ import backgroundDesk from './img/background-header.jpg'
 import backgroundItalia from './img/background-italia.JPG'
 import backgroundWorks from './img/background-works.JPG'
 import backgroundHistory from './img/background-history.JPG'
+import backgroundContact from './img/background-contact.JPG'
 
 export const Home = () => {
   return (
@@ -38,10 +39,56 @@ export const Home = () => {
             <SLink to="/products">VIEW MORE</SLink>
           </SContentsRight>
         </SContensContainerProducts>
+        <SContact>
+          <SContactContainer>
+            <STitle>CONTACT</STitle>
+            <SLink to="/contact">ご連絡の際はこちら</SLink>
+          </SContactContainer>
+        </SContact>
       </SMainContainer>
     </>
   );
 }
+
+const SContactContainer = styled.div`
+  margin: 0 auto;
+  display: flex;
+  width: 80%;
+  align-items: center;
+  ${media.lessThan("small")`
+    display: block;
+  `}
+`
+
+const SContact = styled.div`
+  width: 100%;
+  height: 60vh;
+  padding: 0 30px;
+  background-image: url(${backgroundContact});
+  background-size:  cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+`
+const STitle = styled.h2`
+  font-family: 'Noto Serif',serif;
+  font-size: 24px;
+  letter-spacing: .08em;
+  width: 200px;
+  color: #fff;
+  position: relative;
+  z-index: 9999;
+`
+const SCotactContent = styled.p`
+  font-size: 13px;
+  letter-spacing: .05em;
+  line-height: 24px;
+  color: #fff;
+  width: 80%;
+  max-width: 500px;
+`
 
 const SContentsContainerProto = styled.div`
   width: 80%;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import Qiita from '../../pages/icon/Qiita-logo.png'
 
 export const SUl = styled.ul`
-  margin: 0 auto 0 0;
+  /* margin: 0 auto 0 0; */
   display: flex;
 `
 
