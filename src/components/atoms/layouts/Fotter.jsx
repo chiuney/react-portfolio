@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import media from "styled-media-query";
 import { IconFotter } from '../icon/IconFotter';
 
 export const Fotter = () => {
@@ -38,7 +39,7 @@ const SFotter = styled.footer`
 `
 
 const SNav = styled.nav`
-margin: 0 20px 0 0;
+  margin: 0 20px 0 0;
   position:relative;
   ::after {
    content: "";
@@ -49,7 +50,17 @@ margin: 0 20px 0 0;
    position: absolute;
    top: 0px;
    right: -10px;
-}
+  }
+  ${media.lessThan("small")`
+    /* screen width is less than 768px (medium) */
+    display: none;
+  `}
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    ::after {
+      content: none;
+    }
+  `}
 `
 
 const SUl = styled.ul`
@@ -58,6 +69,10 @@ const SLinks = styled.div`
   margin: 40px 0 0 0;
   display: flex;
   align-items: center;
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    display: block;
+  `}
 `
 
 const SLink = styled(Link)`
@@ -70,6 +85,10 @@ const SLink = styled(Link)`
   &:hover{
     cursor: pointer;
   }
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    padding: 20px 10px;
+  `}
 `
 
 const SP = styled.p`

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from "styled-media-query";
 import { SA, SLi, SUl } from './IconCss';
 
 export const IconFotter = () => {
@@ -16,8 +17,20 @@ export const IconFotter = () => {
 
 const SQiita = styled(SA)`
   background: #fff;
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    margin: 0 5px;
+  `}
 `
 const SIcons = styled(SUl)`
+  ${media.lessThan("medium")`
+    /* screen width is less than 768px (medium) */
+    margin: 10px 0 0 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `}
 `
 const SIconLink = styled(SLi)`
+  margin: 0 5px;
 `
