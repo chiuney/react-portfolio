@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import media from "styled-media-query";
 import { IconHeader } from '../icon/IconHeader';
 
 export const Header = (props) => {
@@ -53,6 +54,9 @@ const SNav = styled.nav`
   top: 90px;
   width: 100%;
   background: #000;
+  ${media.lessThan("small")`
+    height: auto;
+  `}
 `
 
 const SUl = styled.ul`
@@ -60,6 +64,9 @@ const SUl = styled.ul`
   display: flex;
   align-items: center;
   justify-content: center;
+  ${media.lessThan("small")`
+    flex-direction: column;
+  `}
 `
 
 const SLink = styled(Link)`

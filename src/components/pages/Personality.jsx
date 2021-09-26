@@ -1,4 +1,4 @@
-import React, { useState, memo } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components";
 import media from "styled-media-query";
 import { ModalImage } from "../organisms/personality/ModalImg";
