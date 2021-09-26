@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
+import media from "styled-media-query";
 import backgroundHeader from './img/background-header-about.jpg'
 
 const skills = [
@@ -105,12 +106,16 @@ export const Skill = () => {
 const SMainContainer = styled.div`
   background: linear-gradient(#000, #201c09);
   padding: 0 60px;
+  ${media.lessThan("small")`
+    padding: 0 30px;
+  `}
 `
 const SSkills = styled.ul`
   display: flex;
   flex-direction: column;
   margin: 0 auto;
   width: fit-content;
+  max-width: 100%;
   cursor: pointer;
 `
 const SSkill = styled.li`
@@ -118,6 +123,9 @@ const SSkill = styled.li`
   height: auto;
   padding: 40px 0;
   border-bottom: 1px solid #bea76f;
+  ${media.lessThan("small")`
+      display: block;
+  `}
 `
 const SSkillTitle = styled.h4`
   font-family: 'Noto Serif',serif;
@@ -130,8 +138,12 @@ const SSKillContents = styled.div`
   letter-spacing: .05em;
   line-height: 24px;
   width: 80%;
+  ${media.lessThan("small")`
+      width: 100%;
+  `}
 `
 const SCOmments = styled.p`
+  width: 100%;
 `
 const SDetailTitle = styled.h3`
   font-family: 'Noto Serif',serif;
@@ -151,6 +163,9 @@ const SHeader = styled.div`
   background-size:  cover;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   ::before {
     background-color: rgba(0,0,0,0.6);
     position: absolute;
@@ -162,13 +177,13 @@ const SHeader = styled.div`
   }
 `
 const STitleContainer = styled.div`
+  padding: 0 60px;
   display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  position: relative;
+  ${media.lessThan("small")`
+    display: block;
+    padding: 0 30px;
+  `}
 `
 const STitle = styled.h2`
   font-family: 'Noto Serif',serif;
@@ -184,4 +199,7 @@ const SContent = styled.p`
   color: #fff;
   min-width: 300px;
   width: fit-content;
+  ${media.lessThan("small")`
+    min-width: auto;
+  `}
 `
