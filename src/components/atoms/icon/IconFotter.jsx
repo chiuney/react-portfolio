@@ -17,6 +17,7 @@ export const IconFotter = () => {
 
 const SQiita = styled(SA)`
   background: #fff;
+  margin: 0;
   ${media.lessThan("medium")`
     /* screen width is less than 768px (medium) */
     margin: 0 5px;
