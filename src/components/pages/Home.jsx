@@ -81,14 +81,14 @@ const STitle = styled.h2`
   position: relative;
   z-index: 9999;
 `
-const SCotactContent = styled.p`
-  font-size: 13px;
-  letter-spacing: .05em;
-  line-height: 24px;
-  color: #fff;
-  width: 80%;
-  max-width: 500px;
-`
+// const SCotactContent = styled.p`
+//   font-size: 13px;
+//   letter-spacing: .05em;
+//   line-height: 24px;
+//   color: #fff;
+//   width: 80%;
+//   max-width: 500px;
+// `
 
 const SContentsContainerProto = styled.div`
   width: 80%;

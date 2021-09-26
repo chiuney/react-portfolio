@@ -1,8 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 import styled from "styled-components";
+import media from "styled-media-query";
 import { ModalImage } from "../organisms/personality/ModalImg";
 import mindMap from './img/101.png'
 import backgroundItalia from './img/background-italia.JPG'
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
 
 // 「人物」「好き」「苦手」「考え」「経験」「その他」
 const notes = [{
@@ -48,9 +56,13 @@ const notes = [{
   }
 ]
 
-export const Personality = () => {
+export const Personality = React.memo(() => {
   const [showImg, setShowImg] = useState(false);
   const [showContent, setShowContent] = useState(0);
+
+  const onClickShowList = (i) => {
+    setShowContent(i);
+  }
 
   return (
     <>
@@ -67,12 +79,30 @@ export const Personality = () => {
         <SContentContainer>
           <div>
             <SNoteTitle>Pick up</SNoteTitle>
+            {/* スマホ画面 */}
+            <SAccordion>
+              {
+                React.Children.toArray(notes.map((e) => (
+                  <AccordionItem>
+                    <AccordionItemHeading>
+                      <SAccordionItemButton>
+                        {e.title}
+                      </SAccordionItemButton>
+                    </AccordionItemHeading>
+                    <SAccordionItemPanel>
+                      {e.content}
+                    </SAccordionItemPanel>
+                  </AccordionItem>
+                )))
+              }
+            </SAccordion>
+            {/* タブレット、PC画面 */}
             <SNotes>
               {
               React.Children.toArray(notes.map((e,i) => {
                 return(
                   <>
-                    <SNote onClick={() => setShowContent(i)} content={e.content} key={e.id}>
+                    <SNote onClick={() => onClickShowList(i)}>
                     {e.title}
                     </SNote>
                   </>
@@ -86,13 +116,49 @@ export const Personality = () => {
       </SContainer>
     </>
   );
-}
+})
+
+const SAccordionItemButton = styled(AccordionItemButton)`
+  height: auto;
+  width: 180px;
+  margin: 10px auto;
+  list-style: none;
+  position:relative;
+
+  ::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background:#bea76f;
+    position: absolute;
+    bottom: 0;
+  }
+`
+const SAccordionItemPanel = styled(AccordionItemPanel)`
+  font-size: 13px;
+  letter-spacing: .05em;
+  line-height: 24px;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+`
+
+const SAccordion = styled(Accordion)`
+  ${media.greaterThan("small")`
+    display: none;
+  `}
+`
+
 const SNotes = styled.ul`
   display: flex;
   flex-direction: column;
   margin: 0 0 0 50px;
   width: fit-content;
   cursor: pointer;
+  ${media.lessThan("small")`
+    display: none;
+  `}
 `
 const SNote = styled.li`
   height: auto;
@@ -109,9 +175,9 @@ const SNote = styled.li`
     background:#bea76f;
     position: absolute;
     bottom: 0;
-    /* left: 10px; */
   }
 `
+
 const SNoteTitle = styled.h3`
   font-family: 'Noto Serif',serif;
   text-align: left;
@@ -125,11 +191,13 @@ const SNoteContent = styled.p`
   line-height: 24px;
   text-align: left;
   margin: 70px auto 0;
-  min-width: 400px;
   width: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
+  ${media.lessThan("small")`
+    display: none;
+  `}
 `
 const SHeader = styled.div`
   height: 100%;
@@ -138,14 +206,15 @@ const SHeader = styled.div`
   background-size:  cover;
   background-repeat: no-repeat;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 const STitleContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  /* height: 100%; */
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `
 const SContainer = styled.div`
   text-align: center;
@@ -155,22 +224,35 @@ const STitle = styled.h2`
   font-family: 'Noto Serif',serif;
   font-size: 24px;
   letter-spacing: .08em;
-  width: fit-content;
+  width: 100%;
   text-align: left;
+  ${media.lessThan("medium")`
+    text-align: center;
+  `}
 `
 const SContentContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   display: flex;
+  position: relative;
+  ${media.lessThan("small")`
+    text-align: center;
+    flex-direction: column;
+  `}
 `
 const SContent = styled.p`
   font-size: 13px;
   letter-spacing: .05em;
   line-height: 24px;
-  width: 500px;
+  max-width: 500px;
+  width: 100%;
   margin: 0 0 100px 0;
-  /* width: fit-content; */
   text-align: left;
+  ${media.lessThan("medium")`
+    width: 90%;
+    text-align: center;
+    flex-direction: column;
+  `}
 `
 const SButton = styled.div`
   display:block;

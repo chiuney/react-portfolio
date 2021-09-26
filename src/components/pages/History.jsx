@@ -59,7 +59,7 @@ const SContainer = styled.div`
   max-width: 1170px;
   padding: 0 0 0 32px;
   margin: 32px 0 64px;
-  background: linear-gradient(#000, #201c09);
+  /* background: linear-gradient(#000, #201c09); */
   position: relative;
   ::before {
     content: '';
