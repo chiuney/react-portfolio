@@ -4,13 +4,8 @@ import media from "styled-media-query";
 import { ModalImage } from "../organisms/personality/ModalImg";
 import mindMap from './img/101.png'
 import backgroundItalia from './img/background-italia.JPG'
-import {
-  Accordion,
-  AccordionItem,
-  AccordionItemButton,
-  AccordionItemHeading,
-  AccordionItemPanel,
-} from 'react-accessible-accordion';
+import { PickUpInSP } from '../organisms/personality/PickUpInSP';
+import { PickUpInPC } from '../organisms/personality/PickUpInPC';
 
 // 「人物」「好き」「苦手」「考え」「経験」「その他」
 const notes = [{
@@ -58,11 +53,6 @@ const notes = [{
 
 export const Personality = React.memo(() => {
   const [showImg, setShowImg] = useState(false);
-  const [showContent, setShowContent] = useState(0);
-
-  const onClickShowList = (i) => {
-    setShowContent(i);
-  }
 
   return (
     <>
@@ -71,112 +61,25 @@ export const Personality = React.memo(() => {
           <STitleContainer>
             <STitle>presonality</STitle>
             <SContent>自己分析の一環として「自分を構成する101個のワード」を考えました。</SContent>
-            <SButton src={mindMap} alt="101ワード" onClick={() => setShowImg(true)} >マインドマップ</SButton>
-            <SButton><SA href='https://note.com/sakikura/n/n652068a6e9bd' target='_blank' rel="noreferrer">note <i className="fas fa-external-link-alt"></i></SA></SButton>
+            <SButtonContainer>
+              <SButton src={mindMap} alt="101ワード" onClick={() => setShowImg(true)} >マインドマップ</SButton>
+              <SButton><SA href='https://note.com/sakikura/n/n652068a6e9bd' target='_blank' rel="noreferrer">note <i className="fas fa-external-link-alt"></i></SA></SButton>
+            </SButtonContainer>
           </STitleContainer>
         </SHeader>
         <ModalImage showImg={showImg} setShowImg={setShowImg} mindMap={mindMap} ></ModalImage>
-        <SContentContainer>
-          <div>
-            <SNoteTitle>Pick up</SNoteTitle>
-            {/* スマホ画面 */}
-            <SAccordion>
-              {
-                React.Children.toArray(notes.map((e) => (
-                  <AccordionItem>
-                    <AccordionItemHeading>
-                      <SAccordionItemButton>
-                        {e.title}
-                      </SAccordionItemButton>
-                    </AccordionItemHeading>
-                    <SAccordionItemPanel>
-                      {e.content}
-                    </SAccordionItemPanel>
-                  </AccordionItem>
-                )))
-              }
-            </SAccordion>
-            {/* タブレット、PC画面 */}
-            <SNotes>
-              {
-              React.Children.toArray(notes.map((e,i) => {
-                return(
-                  <>
-                    <SNote onClick={() => onClickShowList(i)}>
-                    {e.title}
-                    </SNote>
-                  </>
-                );
-              }))
-            }
-            </SNotes>
-          </div>
-          <SNoteContent>{notes[showContent].content}</SNoteContent>
-        </SContentContainer>
+        <SPickUpContainer>
+          <SNoteTitle>Pick up</SNoteTitle>
+          {/* スマホ画面 */}
+          <PickUpInSP notes={notes}></PickUpInSP>
+          {/* PC、タブレット画面 */}
+          <PickUpInPC notes={notes}></PickUpInPC>
+        </SPickUpContainer>
       </SContainer>
     </>
   );
 })
 
-const SAccordionItemButton = styled(AccordionItemButton)`
-  height: auto;
-  width: 180px;
-  margin: 10px auto;
-  list-style: none;
-  position:relative;
-
-  ::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background:#bea76f;
-    position: absolute;
-    bottom: 0;
-  }
-`
-const SAccordionItemPanel = styled(AccordionItemPanel)`
-  font-size: 13px;
-  letter-spacing: .05em;
-  line-height: 24px;
-  text-align: center;
-  margin: 0 auto;
-  width: 80%;
-`
-
-const SAccordion = styled(Accordion)`
-  ${media.greaterThan("small")`
-    display: none;
-  `}
-`
-
-const SNotes = styled.ul`
-  display: flex;
-  flex-direction: column;
-  margin: 0 0 0 50px;
-  width: fit-content;
-  cursor: pointer;
-  ${media.lessThan("small")`
-    display: none;
-  `}
-`
-const SNote = styled.li`
-  height: auto;
-  width: 180px;
-  margin: 10px;
-  list-style: none;
-  position:relative;
-
-  ::after{
-    content: "";
-    display: block;
-    width: 100%;
-    height: 1px;
-    background:#bea76f;
-    position: absolute;
-    bottom: 0;
-  }
-`
 
 const SNoteTitle = styled.h3`
   font-family: 'Noto Serif',serif;
@@ -184,20 +87,6 @@ const SNoteTitle = styled.h3`
   font-size: 16px;
   letter-spacing: .08em;
   margin: 20px 0 20px 60px;
-`
-const SNoteContent = styled.p`
-  font-size: 13px;
-  letter-spacing: .05em;
-  line-height: 24px;
-  text-align: left;
-  margin: 70px auto 0;
-  width: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  ${media.lessThan("small")`
-    display: none;
-  `}
 `
 const SHeader = styled.div`
   height: 100%;
@@ -211,7 +100,6 @@ const SHeader = styled.div`
   justify-content: center;
 `
 const STitleContainer = styled.div`
-  /* height: 100%; */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -230,10 +118,11 @@ const STitle = styled.h2`
     text-align: center;
   `}
 `
-const SContentContainer = styled.div`
+const SPickUpContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   display: flex;
+  flex-direction: column;
   position: relative;
   ${media.lessThan("small")`
     text-align: center;
@@ -246,7 +135,7 @@ const SContent = styled.p`
   line-height: 24px;
   max-width: 500px;
   width: 100%;
-  margin: 0 0 100px 0;
+  margin: 0 0 50px 0;
   text-align: left;
   ${media.lessThan("medium")`
     width: 90%;
@@ -254,15 +143,20 @@ const SContent = styled.p`
     flex-direction: column;
   `}
 `
+const SButtonContainer = styled.div`
+  display: flex;
+  ${media.lessThan("medium")`
+    flex-direction: column;
+  `}
+`
 const SButton = styled.div`
-  display:block;
-  margin: 30px auto 0;
+  display: block;
+  margin: 0 30px 20px;
   width: fit-content;
   width: 80px;
   padding: 14px 28px;
-  background-color: transparent;
+  background: transparent;
   font-size: 11px;
-  color: #fff;
   font-family: "Harmonia Sans",sans-serif;
   font-weight: 400;
   border: 1px solid #fff;
