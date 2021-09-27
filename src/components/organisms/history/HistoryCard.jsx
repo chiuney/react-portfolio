@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import media from "styled-media-query";
 
-export const CarrerCard = (props) => {
+export const HistoryCard = (props) => {
   const { step } = props;
 
   return (
@@ -12,13 +12,11 @@ export const CarrerCard = (props) => {
           return(
             <>
               <SStartDate>{e.startDate}</SStartDate>
-              <Skari>
-                <SContainer>
-                  <STitle>{e.title}</STitle>
-                  <SStartDateInStep>{e.startDate}</SStartDateInStep>
-                  <SContent>{e.content}</SContent>
-                </SContainer>
-              </Skari>
+              <SContainer>
+                <STitle>{e.title}</STitle>
+                <SStartDateInStep>{e.startDate}</SStartDateInStep>
+                <SContent>{e.content}</SContent>
+              </SContainer>
             </>
           );
         }))
@@ -27,16 +25,17 @@ export const CarrerCard = (props) => {
   );
 }
 
-const Skari = styled.div`
-  margin: 0 50px 0 0;
+const SContainer = styled.div`
+  color: #fff;
+  padding: 18px 0 18px 12px;
+  margin: 24px 50px 0 32px;
   position: relative;
-  display: flex;
 
   /* 下線 */
   ::after {
     content: "";
     display: block;
-    width: 100%;
+    width: 101%;
     height: 1px;
     background: #bea76f;
     position: absolute;
@@ -44,6 +43,8 @@ const Skari = styled.div`
   }
 
   ${media.greaterThan("large")`
+    max-width: 500px;
+    margin: 0;
     /* コンテナの位置 */
     :nth-of-type(1n) {
       width: 45%;
@@ -63,21 +64,6 @@ const Skari = styled.div`
     }
   `}
 `
-
-const SContainer = styled.div`
-  width: 100%;
-  color: #fff;
-  padding: 18px 0 18px 12px;
-  margin: 24px 0 0 32px;
-  position: relative;
-
-  ${media.greaterThan("large")`
-    /* screen width is greater than 1170px (large) */
-    max-width: 500px;
-    margin: 0;
-  `}
-`
-
 const STitle = styled.h3`
   font-family: 'Noto Serif',serif;
   font-size: 17px;
@@ -94,7 +80,6 @@ const SStartDate = styled.p`
   line-height: 24px;
 
   ${media.greaterThan("large")`
-    /* screen width is greater than 1170px (large) */
     display: initial;
     :nth-of-type(1n){
       left: 55%;
@@ -115,7 +100,6 @@ const SStartDateInStep = styled.p`
   line-height: 24px;
 
   ${media.greaterThan("large")`
-    /* screen width is greater than 1170px (large) */
     display: none;
   `}
 `
@@ -124,15 +108,3 @@ const SContent = styled.p`
   letter-spacing: .05em;
   line-height: 24px;
 `
-
-// ${media.lessThan("medium")`
-// /* screen width is less than 768px (medium) */
-// `}
-
-// ${media.between("medium", "large")`
-// /* screen width is between 768px (medium) and 1170px (large) */
-// `}
-
-// ${media.greaterThan("large")`
-// /* screen width is greater than 1170px (large) */
-// `}

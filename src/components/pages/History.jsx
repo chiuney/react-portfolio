@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import media from "styled-media-query";
-import { CarrerCard } from "../organisms/carrer/CarrerCard";
+import { HistoryCard } from "../organisms/history/HistoryCard";
 
 const step = [{
     title: '独学開始',
@@ -49,7 +49,7 @@ export const History = () => {
     <>
       <STitle>History</STitle>
       <SContainer>
-        <CarrerCard step={step}></CarrerCard>
+        <HistoryCard step={step}></HistoryCard>
       </SContainer>
     </>
   );
@@ -59,7 +59,6 @@ const SContainer = styled.div`
   max-width: 1170px;
   padding: 0 0 0 32px;
   margin: 32px 0 64px;
-  /* background: linear-gradient(#000, #201c09); */
   position: relative;
   ::before {
     content: '';
@@ -72,7 +71,6 @@ const SContainer = styled.div`
   }
 
   ${media.greaterThan("large")`
-    /* screen width is greater than 1170px (large) */
     margin: 64px auto;
     padding: 0 32px;
     ::before {
@@ -93,7 +91,6 @@ const STitle = styled.h2`
   font-style: normal;
   font-weight: 400;
   ${media.greaterThan("large")`
-    /* screen width is greater than 1170px (large) */
     width: 100%;
     margin: 0;
     text-align: center;
