@@ -42,7 +42,8 @@ export const Home = () => {
         <SContact>
           <SContactContainer>
             <STitle>CONTACT</STitle>
-            <SLink to="/contact">ご連絡の際はこちら</SLink>
+            <SContacrContent>ご連絡の際はこちら。何かございましたらお気軽にご連絡ください。フリーランスではございませんので、お仕事のご依頼はお引き受けできかねます。</SContacrContent>
+            <SLink to="/contact">CONTACT</SLink>
           </SContactContainer>
         </SContact>
       </SMainContainer>
@@ -50,20 +51,27 @@ export const Home = () => {
   );
 }
 
+const SContacrContent = styled.div`
+  font-size: 13px;
+  letter-spacing: .05em;
+  line-height: 24px;
+  color: #fff;
+
+  max-width: 500px;
+`
+
 const SContactContainer = styled.div`
   margin: 0 auto;
   display: flex;
   width: 80%;
   align-items: center;
-  ${media.lessThan("small")`
-    display: block;
-  `}
+  flex-direction: column;
 `
 
 const SContact = styled.div`
   width: 100%;
   height: 60vh;
-  padding: 0 30px;
+  margin: 0 auto;
   background-image: url(${backgroundContact});
   background-size:  cover;
   background-repeat: no-repeat;
@@ -80,15 +88,9 @@ const STitle = styled.h2`
   color: #fff;
   position: relative;
   z-index: 9999;
+  text-align: center;
+  margin: 0 0 30px 0;
 `
-// const SCotactContent = styled.p`
-//   font-size: 13px;
-//   letter-spacing: .05em;
-//   line-height: 24px;
-//   color: #fff;
-//   width: 80%;
-//   max-width: 500px;
-// `
 
 const SContentsContainerProto = styled.div`
   width: 80%;
