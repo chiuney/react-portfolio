@@ -7,6 +7,7 @@ import backgroundItalia from './img/background-italia.JPG'
 import backgroundWorks from './img/background-works.JPG'
 import backgroundHistory from './img/background-history.JPG'
 import backgroundContact from './img/background-contact.JPG'
+import { LinkButton } from '../atoms/button/LinkButton';
 
 export const Home = () => {
   return (
@@ -16,7 +17,7 @@ export const Home = () => {
           <SH1>Chiuney's Portfolio</SH1>
           <SContent>埼玉県出身のWebエンジニア。早稲田大学を卒業後、ホテルの運営会社で現場での接客業務やレベニューマネジメント*業務に携わる。退職を機に独学でプログラミングの勉強を開始し、2021年3月にIT業界へ転職。フロントエンドエンジニアとして既存システムの改修や機能拡張、新規開発に携わっています。</SContent>
           <SComment>*各店舗の需要予測と利益の最大化を目的とした施策</SComment>
-          <SLink to="/skill">SKILL</SLink>
+          <LinkButton url="/skill">SKILL</LinkButton>
         </STitleContainer>
       </SContainer>
       <SMainContainer>
@@ -24,26 +25,26 @@ export const Home = () => {
         <SContensContainerHistory>
           <SContentsRight>
             <SContentTitle>History</SContentTitle>
-            <SLink to="/history">VIEW MORE</SLink>
+            <LinkButton url="/history">VIEW MORE</LinkButton>
           </SContentsRight>
         </SContensContainerHistory>
         <SContensContainerPersonality>
           <SContentsLeft>
             <SContentTitle>Personality</SContentTitle>
-            <SLink to="/personality">VIEW MORE</SLink>
+            <LinkButton url="/personality">VIEW MORE</LinkButton>
           </SContentsLeft>
         </SContensContainerPersonality>
         <SContensContainerProducts>
           <SContentsRight>
             <SContentTitle>Products</SContentTitle>
-            <SLink to="/products">VIEW MORE</SLink>
+            <LinkButton url="/products">VIEW MORE</LinkButton>
           </SContentsRight>
         </SContensContainerProducts>
         <SContact>
           <SContactContainer>
             <STitle>CONTACT</STitle>
             <SContacrContent>ご連絡の際はこちら。何かございましたらお気軽にご連絡ください。フリーランスではございませんので、お仕事のご依頼はお引き受けできかねます。</SContacrContent>
-            <SLink to="/contact">CONTACT</SLink>
+            <LinkButton url="/contact">CONTACT</LinkButton>
           </SContactContainer>
         </SContact>
       </SMainContainer>
@@ -184,28 +185,7 @@ const SComment = styled.p`
   letter-spacing: .05em;
   line-height: 24px;
 `
-const SLink = styled(Link)`
-  color: #fff;
-  text-decoration: none;
-  display:block;
-  margin: 16px auto 0 auto;
-  width: fit-content;
-  padding: 14px 28px;
-  background-color: transparent;
-  font-size: 11px;
-  font-family: "Harmonia Sans",sans-serif;
-  font-weight: 400;
-  border: 1px solid #fff;
-  box-shadow: none;
-  &:hover {
-    cursor: pointer;
-  }
-  &:active {
-    background: #fff;
-    opacity: .6;
-    color: #000;
-  }
-`
+
 const SContent = styled.p`
   margin: 30px auto 0 auto;
   font-size: 13px;
