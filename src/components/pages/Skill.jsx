@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import media from "styled-media-query";
+import { SkilCards } from '../organisms/skill/SkillCards';
 import backgroundHeader from './img/background-header-about.jpg'
 
 const skills = [
@@ -78,26 +79,7 @@ export const Skill = () => {
         </SHeader>
         <SMainContainer>
           <SDetailTitle>Details</SDetailTitle>
-            <SSkills>
-              {
-              React.Children.toArray(skills.map((e,i) => {
-                return(
-                  <>
-                  <SSkill>
-                    <SSkillTitle>{e.title}</SSkillTitle>
-                    <SSKillContents>
-                      <p>学習開始日 : {e.start}</p>
-                      {
-                      e.business ? (<p>実務経験 : あり</p>):(<></>)
-                      }
-                      <SCOmments>{e.comment}</SCOmments>
-                    </SSKillContents>
-                  </SSkill>
-                  </>
-                );
-              }))
-            }
-            </SSkills>
+          <SkilCards skills={skills}></SkilCards>
         </SMainContainer>
       </SContentContainer>
     </>
@@ -109,41 +91,6 @@ const SMainContainer = styled.div`
   ${media.lessThan("small")`
     padding: 0 30px;
   `}
-`
-const SSkills = styled.ul`
-  display: flex;
-  flex-direction: column;
-  margin: 0 auto;
-  width: fit-content;
-  max-width: 100%;
-  cursor: pointer;
-`
-const SSkill = styled.li`
-  display: flex;
-  height: auto;
-  padding: 40px 0;
-  border-bottom: 1px solid #bea76f;
-  ${media.lessThan("small")`
-      display: block;
-  `}
-`
-const SSkillTitle = styled.h4`
-  font-family: 'Noto Serif',serif;
-  font-size: 17px;
-  letter-spacing: .08em;
-  width: 230px;
-`
-const SSKillContents = styled.div`
-  font-size: 13px;
-  letter-spacing: .05em;
-  line-height: 24px;
-  width: 80%;
-  ${media.lessThan("small")`
-      width: 100%;
-  `}
-`
-const SCOmments = styled.p`
-  width: 100%;
 `
 const SDetailTitle = styled.h3`
   font-family: 'Noto Serif',serif;
