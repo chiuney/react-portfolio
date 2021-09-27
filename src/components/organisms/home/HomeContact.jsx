@@ -9,7 +9,7 @@ export const HomeContact = () => {
     <>
       <SContainer>
         <STitle>CONTACT</STitle>
-        <SContent>ご連絡の際はこちら。何かございましたらお気軽にご連絡ください。フリーランスではございませんので、お仕事のご依頼はお引き受けできかねます。</SContent>
+        <SContent>何かございましたらお気軽にご連絡ください。</SContent>
         <LinkButton url="/contact">CONTACT</LinkButton>
       </SContainer>
     </>
