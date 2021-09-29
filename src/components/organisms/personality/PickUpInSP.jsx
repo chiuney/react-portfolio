@@ -34,6 +34,7 @@ export const PickUpInSP = (props) => {
 
 const SAccordionItemButton = styled(AccordionItemButton)`
   height: auto;
+  padding: 30px 0;
   width: 70%;
   margin: 10px auto;
   list-style: none;
