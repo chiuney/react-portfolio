@@ -116,7 +116,6 @@ const SLine3 = styled(SLines)`
 const SHeader = styled.header`
   height: 90px;
   width: 100%;
-  background: #000;
   display: flex;
   align-items: center;
   justify-content: center;

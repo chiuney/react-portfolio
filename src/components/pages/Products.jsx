@@ -66,14 +66,14 @@ const SMask = styled(Link)`
     position: absolute;
     top: 0;
     left: 0;
-    background-color:	rgba(0,0,0,0.4);
+    /* background-color:	rgba(0,0,0,0.4); */
     color: #fff;
     text-decoration: none;
 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 
-  ${media.greaterThan("large")`
+  ${media.greaterThan("medium")`
     width: 100%;
     height: 100%;
     position: absolute;

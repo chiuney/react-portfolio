@@ -42,7 +42,6 @@ export const Home = () => {
 
 // MAIN
 const SMainContainer = styled.div`
-  background: linear-gradient(#000, #201c09);
 `
 const SHeaderImg = styled.img`
   height: auto;
