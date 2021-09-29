@@ -50,7 +50,7 @@ const SContentsContainer = styled.div`
 
  :nth-of-type(1) {
   margin: -80px auto 0 auto;
-  background-image: url('${process.env.PUBLIC_URL}/img/background-works.JPG');
+  background-image: url('${process.env.PUBLIC_URL}/background-works.JPG');
 
  }
  :nth-of-type(2) {
