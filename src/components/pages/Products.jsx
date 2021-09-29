@@ -73,7 +73,7 @@ const SMask = styled(Link)`
     display: flex;
     align-items: center;
 
-  ${media.greaterThan("medium")`
+  ${media.greaterThan("large")`
     width: 100%;
     height: 100%;
     position: absolute;
