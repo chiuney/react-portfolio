@@ -2,7 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import media from 'styled-media-query';
 import backgroundItalia from '../../pages/img/background-italia.JPG'
-import backgroundWorks from '../../pages/img/background-works.JPG'
+// import backgroundWorks from '../../pages/img/background-works.JPG'
 import backgroundHistory from '../../pages/img/background-history.JPG'
 import { LinkButton } from '../../atoms/button/LinkButton';
 
@@ -50,7 +50,8 @@ const SContentsContainer = styled.div`
 
  :nth-of-type(1) {
   margin: -80px auto 0 auto;
-  background-image: url(${backgroundWorks});
+  background-image: url(${process.env.PUBLIC_URL} + '/background-works.JPG');
+
  }
  :nth-of-type(2) {
   background-image: url(${backgroundItalia});
