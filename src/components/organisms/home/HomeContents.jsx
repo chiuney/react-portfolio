@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import media from 'styled-media-query';
-import backgroundItalia from '../../pages/img/background-italia.JPG'
-// import backgroundWorks from '../../pages/img/background-works.JPG'
-import backgroundHistory from '../../pages/img/background-history.JPG'
 import { LinkButton } from '../../atoms/button/LinkButton';
 
 export const HomeContents = (props) => {
@@ -54,10 +51,10 @@ const SContentsContainer = styled.div`
 
  }
  :nth-of-type(2) {
-  background-image: url(${backgroundItalia});
+  background-image: url('${window.location.origin}/img/background-italia.png');
  }
  :nth-of-type(3) {
-  background-image: url(${backgroundHistory});
+  background-image: url('${window.location.origin}/img/background-history.png');
  }
 `
 

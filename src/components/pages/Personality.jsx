@@ -3,7 +3,6 @@ import styled from "styled-components";
 import media from "styled-media-query";
 import { ModalImage } from "../organisms/personality/ModalImg";
 import mindMap from './img/101.png'
-import backgroundItalia from './img/background-italia.JPG'
 import { PickUpInSP } from '../organisms/personality/PickUpInSP';
 import { PickUpInPC } from '../organisms/personality/PickUpInPC';
 
@@ -91,7 +90,7 @@ const SNoteTitle = styled.h3`
 const SHeader = styled.div`
   height: 100%;
   height: 760px;
-  background-image: url(${backgroundItalia});
+  background-image: url('${window.location.origin}/img/background-italia.png');
   background-size:  cover;
   background-repeat: no-repeat;
   position: relative;

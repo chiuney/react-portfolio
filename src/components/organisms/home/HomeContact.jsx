@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import backgroundContact from '../../pages/img/background-contact.JPG'
 import { LinkButton } from '../../atoms/button/LinkButton';
 
 export const HomeContact = () => {
@@ -21,7 +20,7 @@ const SContainer = styled.div`
   height: 60vh;
   min-height: 500px;
   margin: 0 auto;
-  background-image: url(${backgroundContact});
+  background-image: url('${window.location.origin}/img/background-contact.png');
   background-size:  cover;
   background-repeat: no-repeat;
   background-position: center;
