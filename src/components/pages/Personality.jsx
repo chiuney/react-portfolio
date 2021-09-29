@@ -62,7 +62,7 @@ export const Personality = React.memo(() => {
             <SContent>自己分析の一環として「自分を構成する101個のワード」を考えました。</SContent>
             <SButtonContainer>
               <SButton src={mindMap} alt="101ワード" onClick={() => setShowImg(true)} >マインドマップ</SButton>
-              <SButton><SA href='https://note.com/sakikura/n/n652068a6e9bd' target='_blank' rel="noreferrer">note <i className="fas fa-external-link-alt"></i></SA></SButton>
+              <SButton><SA href='https://note.com/preview/n652068a6e9bd?prev_access_key=1d6b61344a6ed7705fe353967fff3dcc' target='_blank' rel="noreferrer">note <i className="fas fa-external-link-alt"></i></SA></SButton>
             </SButtonContainer>
           </STitleContainer>
         </SHeader>
