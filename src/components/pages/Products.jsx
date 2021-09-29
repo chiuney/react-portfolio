@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import media from 'styled-media-query';
 import backgroundPc from './img/background-pc.jpg'
 
 const products = [
@@ -32,17 +33,17 @@ export const Products = () => {
                   <SImg src={backgroundPc} alt="{e.title}" />
                   <SProductTitle>{e.title}</SProductTitle>
                   <SMask to={e.url}>
-                      { e.skills ? (
-                        <>
-                    <SMaskText>
-                          <SProductComment>{e.comment}</SProductComment>
-                          <SProductComment>使用技術：{e.skills}</SProductComment>
-                          <SProductComment>その他：{e.other}</SProductComment>
-                    </SMaskText>
-                        </>
+                      { e.skills ?
+                        (
+                          <SMaskText>
+                            <SProductComment>{e.comment}</SProductComment>
+                            <SProductComment>使用技術：{e.skills}</SProductComment>
+                            <SProductComment>その他：{e.other}</SProductComment>
+                          </SMaskText>
                         ):(
                           <SMakingComment>{e.comment}</SMakingComment>
-                        ) }
+                        )
+                      }
                   </SMask>
                 </SProduct>
               </>
@@ -60,22 +61,36 @@ const SMaskText = styled.div`
 `
 
 const SMask = styled(Link)`
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	background-color:	rgba(0,0,0,0.4);
-  color: #fff;
-  text-decoration: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color:	rgba(0,0,0,0.4);
+    color: #fff;
+    text-decoration: none;
 
-  display: flex;
-  align-items: flex-end;
+    display: flex;
+    align-items: flex-end;
 
-  &:hover {
-    opacity: .5;
-  }
+  ${media.greaterThan("large")`
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color:	rgba(0,0,0,0.4);
+    color: #fff;
+    text-decoration: none;
+
+    display: flex;
+    align-items: flex-end;
+
+    &:hover {
+      opacity: .5;
+    }
+  `}
 `
 const SContainer = styled.div`
   min-height: 100vh;
@@ -97,9 +112,6 @@ const SProduct = styled.div`
   margin: 0 20px 70px;
   max-width: 400px;
   position:		relative;
-  /* :last-child {
-    pointer-events: none;
-  } */
 `
 const SProductTitle = styled.h3`
   font-family: 'Noto Serif',serif;
